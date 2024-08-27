@@ -1,6 +1,6 @@
 package RPG;
 
-public class BuildingTile extends Tile{
+public class BuildingTile implements Tile{
     @Override
     public String getCharacter() {
         return "B";

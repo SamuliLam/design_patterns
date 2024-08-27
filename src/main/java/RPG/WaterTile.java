@@ -1,6 +1,6 @@
 package RPG;
 
-public class WaterTile extends Tile{
+public class WaterTile implements Tile{
     @Override
     public String getCharacter() {
         return "W";

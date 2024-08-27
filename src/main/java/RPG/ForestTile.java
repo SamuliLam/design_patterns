@@ -1,6 +1,6 @@
 package RPG;
 
-public class ForestTile extends Tile{
+public class ForestTile implements Tile{
     @Override
     public String getCharacter() {
         return "F";

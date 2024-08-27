@@ -1,6 +1,6 @@
 package RPG;
 
-public class RoadTile extends Tile{
+public class RoadTile implements Tile{
     @Override
     public String getCharacter() {
         return "R";

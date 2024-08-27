@@ -1,6 +1,6 @@
 package RPG;
 
-public class SwampTile extends Tile{
+public class SwampTile implements Tile{
     @Override
     public String getCharacter() {
         return "S";
