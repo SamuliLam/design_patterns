@@ -4,7 +4,7 @@ public abstract class Map {
     private Tile[][] tiles;
     public abstract Tile createTile();
 
-    public Map(int width, int height){
+    protected Map(int width, int height){
         tiles = new Tile[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
