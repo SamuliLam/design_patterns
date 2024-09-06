@@ -6,7 +6,6 @@ public class WeatherStationObserver implements Observer{
     public WeatherStationObserver(String name, WeatherStation observable) {
         this.name = name;
         this.observable = observable;
-        observable.addObserver(this);
     }
 
     @Override

@@ -7,6 +7,9 @@ public class Main {
         WeatherStationObserver observer2 = new WeatherStationObserver("Stefanos", weatherStation);
         WeatherStationObserver observer3 = new WeatherStationObserver("Ismet", weatherStation);
 
+        weatherStation.addObserver(observer1);
+        weatherStation.addObserver(observer2);
+        weatherStation.addObserver(observer3);
 
         Thread thread = new Thread(weatherStation);
         thread.start();
