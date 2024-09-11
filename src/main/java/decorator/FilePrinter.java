@@ -17,5 +17,6 @@ public class FilePrinter extends PrinterDecorator{
     public void print(String message) {
         super.print("Printing to file: " + message);
         writer.println(message);
+        writer.flush();
     }
 }
