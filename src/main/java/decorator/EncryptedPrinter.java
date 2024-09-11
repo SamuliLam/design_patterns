@@ -9,7 +9,7 @@ public class EncryptedPrinter extends PrinterDecorator{
 
     @Override
     public void print(String message) {
-        super.print("Encrypted message: " + encryptMessage(message));
+        super.print(encryptMessage(message));
 
     }
 

@@ -8,5 +8,6 @@ public class Main {
         Printer printer2 = new EncryptedPrinter(new FilePrinter(new BasicPrinter()));
         printer2.print("Hello World!");
 
+
     }
 }
