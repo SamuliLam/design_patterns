@@ -1,5 +1,6 @@
 package state;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Character {
@@ -23,6 +24,12 @@ public class Character {
                 return;
             }
             level.action();
+            if(healthPoints <= 0) {
+                System.out.println("You died. Restarting game.");
+                setExp(0);
+                setHealthPoints(100);
+                level = new NoviceLevelState(this);
+            }
         }
     }
 
@@ -58,9 +65,6 @@ public class Character {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public State getLevel() {
         return level;
@@ -74,6 +78,10 @@ public class Character {
         return exp;
     }
 
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+
 
     public int getHealthPoints() {
         return healthPoints;
@@ -85,6 +93,7 @@ public class Character {
 
     public int readCharacterOptions(String[] options) {
         System.out.println("Choose an option:");
+        System.out.println("Q. Quit");
         for (int i = 0; i < options.length; i++) {
             System.out.println((i + 1) + ". " + options[i]);
         }

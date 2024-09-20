@@ -17,6 +17,8 @@ public class ExpertLevelState extends State{
         String [] options = {"Train", "Meditate", "Fight"};
         final int XP_TO_MASTER = 500;
 
+
+
         switch (this.getCharacter().readCharacterOptions(options)) {
             case 1:
                 if (this.getCharacter().getExp() >= XP_TO_MASTER) {

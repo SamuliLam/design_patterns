@@ -6,12 +6,9 @@ public abstract class State {
     public State(Character character) {
         this.character = character;
     }
-
     public Character getCharacter() {
         return character;
     }
 
     abstract void action();
-
-
 }
