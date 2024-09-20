@@ -10,7 +10,8 @@ public class Character {
     private int exp;
     private int healthPoints;
 
-    public Character(State level) {
+    public Character(String name) {
+        this.name = name;
         level = new NoviceLevelState(this);
         healthPoints = 100;
     }
@@ -26,20 +27,31 @@ public class Character {
     }
 
     public void train() {
+        System.out.println("Training...");
         this.exp += 5;
+        System.out.println("Your XP is now " + this.exp + ".");
     }
 
     public void meditate() {
         if (this.healthPoints + 2 <= 100) {
+            System.out.println("Meditating...");
             this.healthPoints += 2;
+            System.out.println("Your health points are now " + this.healthPoints + ".");
         } else {
-            System.out.println("Cannot meditate anymore. Health points are full.");
+            System.out.println("Cannot meditate. Health points are full.");
         }
     }
 
     public void fight() {
+        System.out.println("Fighting...");
         this.healthPoints -= 10;
         this.exp += 8;
+        if (this.healthPoints <= 0) {
+            System.out.println("You lost the fight. Game over.");
+        } else {
+            System.out.println("Your XP is now " + this.exp + ".");
+            System.out.println("Your health points are now " + this.healthPoints + ".");
+        }
     }
 
     public String getName() {
@@ -62,9 +74,6 @@ public class Character {
         return exp;
     }
 
-    public void setExp(int exp) {
-        this.exp = exp;
-    }
 
     public int getHealthPoints() {
         return healthPoints;
@@ -77,7 +86,7 @@ public class Character {
     public int readCharacterOptions(String[] options) {
         System.out.println("Choose an option:");
         for (int i = 0; i < options.length; i++) {
-            System.out.println(i + ". " + options[i]);
+            System.out.println((i + 1) + ". " + options[i]);
         }
         int choice = scanner.nextInt();
         return choice;

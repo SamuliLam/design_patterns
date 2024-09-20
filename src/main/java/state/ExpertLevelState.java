@@ -8,8 +8,11 @@ public class ExpertLevelState extends State{
     }
 
     public void action() {
-        System.out.println("Your character is at Expert Level.");
-        System.out.println("You gained the ability to fight. Fighting will greatly increase your XP but you will lose HP.");
+
+        System.out.println("Name: " + this.getCharacter().getName());
+        System.out.println("XP: " + this.getCharacter().getExp());
+        System.out.println("Health: " + this.getCharacter().getHealthPoints());
+
 
         String [] options = {"Train", "Meditate", "Fight"};
         final int XP_TO_MASTER = 500;
@@ -33,12 +36,6 @@ public class ExpertLevelState extends State{
                     this.getCharacter().setLevel(new MasterLevelState(this.getCharacter()));
                     break;
                 }
-                if(this.getCharacter().getHealthPoints() <= 0){
-                    System.out.println("YOU DIED.");
-                    break;
-                }
-                System.out.println("You gained XP. Your current XP is " + this.getCharacter().getExp());
-                System.out.println("Fighting made you bleed. Your current HP is " + this.getCharacter().getHealthPoints());
                 break;
         }
 
