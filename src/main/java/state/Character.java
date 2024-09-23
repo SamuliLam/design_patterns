@@ -39,10 +39,9 @@ public class Character {
     }
 
     public void meditate() {
-        if (this.healthPoints + 2 <= 100) {
+        if (this.healthPoints + 5 <= 100) {
             System.out.println("Meditating...");
-            this.healthPoints += 2;
-            System.out.println("Your health points are now " + this.healthPoints + ".");
+            this.healthPoints += 5;
         } else {
             System.out.println("Cannot meditate. Health points are full.");
         }
