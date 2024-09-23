@@ -10,5 +10,7 @@ public class MasterLevelState extends State {
         System.out.println("You are now the highest level. Game ended.");
         System.out.println("Game restarted. Your character is at Novice Level.");
         this.getCharacter().setLevel(new NoviceLevelState(this.getCharacter()));
+        this.getCharacter().setExp(0);
+        this.getCharacter().setHealthPoints(100);
     }
 }

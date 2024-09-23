@@ -15,7 +15,7 @@ public class ExpertLevelState extends State{
 
 
         String [] options = {"Train", "Meditate", "Fight"};
-        final int XP_TO_MASTER = 500;
+        final int XP_TO_MASTER = 275;
 
 
 

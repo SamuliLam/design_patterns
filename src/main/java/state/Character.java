@@ -36,7 +36,6 @@ public class Character {
     public void train() {
         System.out.println("Training...");
         this.exp += 5;
-        System.out.println("Your XP is now " + this.exp + ".");
     }
 
     public void meditate() {
@@ -53,12 +52,6 @@ public class Character {
         System.out.println("Fighting...");
         this.healthPoints -= 10;
         this.exp += 8;
-        if (this.healthPoints <= 0) {
-            System.out.println("You lost the fight. Game over.");
-        } else {
-            System.out.println("Your XP is now " + this.exp + ".");
-            System.out.println("Your health points are now " + this.healthPoints + ".");
-        }
     }
 
     public String getName() {
@@ -66,9 +59,6 @@ public class Character {
     }
 
 
-    public State getLevel() {
-        return level;
-    }
 
     public void setLevel(State level) {
         this.level = level;
@@ -93,11 +83,16 @@ public class Character {
 
     public int readCharacterOptions(String[] options) {
         System.out.println("Choose an option:");
-        System.out.println("Q. Quit");
+        System.out.println("0. to Quit");
         for (int i = 0; i < options.length; i++) {
             System.out.println((i + 1) + ". " + options[i]);
         }
+
         int choice = scanner.nextInt();
+        if (choice == 0) {
+            System.out.println("Game ended.");
+            System.exit(0);
+        }
         return choice;
     }
 

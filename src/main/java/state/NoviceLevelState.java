@@ -7,15 +7,12 @@ public class NoviceLevelState extends State {
     }
 
     public void action() {
-        System.out.println("Name: " + this.getCharacter().getName());
         System.out.println("XP: " + this.getCharacter().getExp());
         System.out.println("Health: " + this.getCharacter().getHealthPoints());
 
         String[] options = {"Train"};
 
-        final int XP_TO_INTERMEDIATE = 100;
-
-
+        final int XP_TO_INTERMEDIATE = 50;
 
         if (this.getCharacter().readCharacterOptions(options) == 1) {
             this.getCharacter().train();

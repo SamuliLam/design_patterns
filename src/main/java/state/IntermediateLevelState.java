@@ -12,7 +12,7 @@ public class IntermediateLevelState extends State  {
         System.out.println("XP: " + this.getCharacter().getExp());
         System.out.println("Health: " + this.getCharacter().getHealthPoints());
 
-        final int XP_TO_EXPERT = 300;
+        final int XP_TO_EXPERT = 150;
         String [] options = {"Train", "Meditate"};
 
         switch (this.getCharacter().readCharacterOptions(options)) {
