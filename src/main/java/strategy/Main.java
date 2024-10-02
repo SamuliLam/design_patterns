@@ -43,10 +43,10 @@ public class Main {
                     break;
                 case 4:
                     exit = true;
-                    continue; // Exit the loop
+                    continue;
                 default:
                     System.out.println("Invalid choice!");
-                    continue; // Continue to next iteration
+                    continue;
             }
 
             // Measure time for small array in milliseconds
