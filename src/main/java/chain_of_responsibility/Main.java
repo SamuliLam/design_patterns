@@ -14,9 +14,9 @@ public class Main {
         Message generalFeedback = new Message("I would like to give you some feedback", "stefanos@gmail.com", Message.MessageType.GENERAL_FEEDBACK);
         Message developmentSuggestion = new Message("I would like to suggest a new feature", "stefanos@gmail.com", Message.MessageType.DEVELOPMENT_SUGGESTION);
 
+        contactRequestHandler.handleMessage(contactRequest);
         contactRequestHandler.handleMessage(generalFeedback);
         contactRequestHandler.handleMessage(compensationRequest);
-        contactRequestHandler.handleMessage(generalFeedback);
         contactRequestHandler.handleMessage(developmentSuggestion);
 
     }
