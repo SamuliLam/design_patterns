@@ -22,20 +22,19 @@ public class Main {
         music.addChild(musicFile1);
         music.addChild(musicFile2);
 
-        // Searching for files, change to mp3 to test for music files
-        SearchVisitor textFileSearchVisitor = new SearchVisitor(".txt");
-        documents.accept(textFileSearchVisitor);
-        System.out.println("Text files found: " + textFileSearchVisitor.getSearchResults());
+        // Searching for files, change to between txt and mp3 to test for different files
+        SearchVisitor searchVisitor = new SearchVisitor("txt");
+        root.accept(searchVisitor);
+        System.out.println("Search results: " + searchVisitor.getSearchResults());
 
-        // Testing size of files for root directory, which should be 85
-        SizeCalculatorVisitor sizeCalculatorVisitor = new SizeCalculatorVisitor();
-        root.accept(sizeCalculatorVisitor);
-        System.out.println("Total size of files: " + sizeCalculatorVisitor.getTotalSize());
 
-        // Testing size of files for music directory, which should be 70
-        SizeCalculatorVisitor sizeCalculatorVisitor2 = new SizeCalculatorVisitor();
-        music.accept(sizeCalculatorVisitor2);
-        System.out.println("Total size of files in music directory: " + sizeCalculatorVisitor2.getTotalSize());
+
+
+        // Testing size of root directory
+        SizeCalculatorVisitor sizeVisitor = new SizeCalculatorVisitor();
+        root.accept(sizeVisitor);
+        System.out.println("Total size of Root directory " + sizeVisitor.getTotalSize());
+
     }
 
 }
