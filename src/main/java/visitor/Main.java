@@ -3,7 +3,7 @@ package visitor;
 public class Main {
     public static void main(String[] args) {
 
-        // Creating two directories
+        // Creating a root directory and two directories inside it
         Directory root = new Directory("Root");
         Directory documents = new Directory("Documents");
         Directory music = new Directory("Music");
