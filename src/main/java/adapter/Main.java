@@ -13,12 +13,11 @@ public class Main {
         // Set the date
         adapter.setDay(15);
         adapter.setMonth(Calendar.OCTOBER);
-        adapter.setYear(2023);
+        adapter.setYear(2024);
 
         // Print the initial date
         System.out.println("Initial date: " + adapter.getDay() + "/" + (adapter.getMonth() + 1) + "/" + adapter.getYear());
 
-        // Advance the date by several days
         adapter.advanceDays(10);
 
         // Print the new date
