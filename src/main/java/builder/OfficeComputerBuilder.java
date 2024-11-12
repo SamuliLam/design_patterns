@@ -2,6 +2,10 @@ package builder;
 
 public class OfficeComputerBuilder implements ComputerBuilder {
     private Computer officeComputer;
+
+    public OfficeComputerBuilder() {
+        this.reset();
+    }
     @Override
     public void buildProcessor() {
         officeComputer.addComponent(new Component("Intel Core i5-9400F"));
