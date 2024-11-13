@@ -9,17 +9,19 @@ public class WildernessMap extends Map {
     }
 
     @Override
-    public Tile createTile() {
+    public Tile createTile(int x, int y, int tileSize) {
         Random rand = new Random();
+        TileType type;
         int n = rand.nextInt(3);
-        String type;
+
         if (n == 0) {
-            type = "swamp";
+            type = TileFactory.getTileType("swamp");
         } else if (n == 1) {
-            type = "water";
+            type = TileFactory.getTileType("water");
         } else {
-            type = "forest";
+            type = TileFactory.getTileType("forest");
         }
-        return TileFactory.getTile(type, TILE_SIZE);
+
+        return new Tile(type, x, y, tileSize);
     }
 }

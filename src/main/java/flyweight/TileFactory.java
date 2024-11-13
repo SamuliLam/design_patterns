@@ -5,14 +5,9 @@ import java.util.Map;
 
 public class TileFactory {
 
-    private static final Map<String, Tile> tiles = new HashMap<>();
+    private static final Map<String, TileType> tileTypes = new HashMap<>();
 
-    public static Tile getTile(String type, int tileSize) {
-        Tile tile = tiles.get(type);
-        if (tile == null) {
-            tile = new Tile(new TileType(type), tileSize);
-            tiles.put(type, tile);
-        }
-        return tile;
+    public static TileType getTileType(String type) {
+        return tileTypes.computeIfAbsent(type, TileType::new);
     }
 }

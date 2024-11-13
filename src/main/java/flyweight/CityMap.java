@@ -3,23 +3,24 @@ package flyweight;
 import java.util.Random;
 
 public class CityMap extends Map {
-
     public CityMap(int width, int height) {
         super(width, height);
     }
 
     @Override
-    public Tile createTile() {
+    public Tile createTile(int x, int y, int tileSize) {
         Random rand = new Random();
+        TileType type;
         int n = rand.nextInt(3);
-        String type;
+
         if (n == 0) {
-            type = "road";
+            type = TileFactory.getTileType("road");
         } else if (n == 1) {
-            type = "building";
+            type = TileFactory.getTileType("building");
         } else {
-            type = "water";
+            type = TileFactory.getTileType("water");
         }
-        return TileFactory.getTile(type, TILE_SIZE);
+
+        return new Tile(type, x, y, tileSize);
     }
 }
