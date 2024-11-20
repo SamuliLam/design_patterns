@@ -34,15 +34,8 @@ public class Book implements Prototype{
         this.genre = content;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getContent() {
-        return genre;
+    @Override
+    public String toString() {
+        return title + " by " + author + " (" + genre + ")";
     }
 }

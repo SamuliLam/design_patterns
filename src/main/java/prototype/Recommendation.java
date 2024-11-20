@@ -16,21 +16,11 @@ public class Recommendation implements Prototype{
         recommendations.add(recommendation);
     }
 
-    public void removeRecommendation(Book recommendation) {
-        recommendations.remove(recommendation);
-    }
 
     public void setTargetAudience(String targetAudience) {
         this.targetAudience = targetAudience;
     }
 
-    public String getTargetAudience() {
-        return targetAudience;
-    }
-
-    public List<Book> getRecommendations() {
-        return recommendations;
-    }
 
     @Override
     public Recommendation clone() {
@@ -39,5 +29,10 @@ public class Recommendation implements Prototype{
             clone.addRecommendation(recommendation.clone());
         }
         return clone;
+    }
+
+    @Override
+    public String toString() {
+        return "Recommendation for " + targetAudience + ":\n" + recommendations;
     }
 }
