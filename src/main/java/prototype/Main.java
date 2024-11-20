@@ -37,14 +37,12 @@ public class Main {
                     System.out.println("Cloned Recommendation:");
                     System.out.println(clonedRecommendation);
                     break;
-
                 case 2:
                     System.out.println("\nCreating a fresh clone of the original recommendation...");
                     clonedRecommendation = scienceFiction.clone();
                     System.out.println("Newly cloned recommendation:");
                     System.out.println(clonedRecommendation);
                     break;
-
                 case 3:
                     System.out.println("\nEnter the details of the book to add:");
                     System.out.print("Title: ");
@@ -58,12 +56,10 @@ public class Main {
                     System.out.println("\nBook added! Updated cloned recommendation:");
                     System.out.println(clonedRecommendation);
                     break;
-
                 case 4:
                     System.out.println("\nThank you for using the Book Recommendation System. Goodbye!");
                     scanner.close();
                     return;
-
                 default:
                     System.out.println("\nInvalid choice. Please try again.");
             }
