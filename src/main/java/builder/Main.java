@@ -13,6 +13,15 @@ public class Main {
         }
 
 
+        OfficeComputerBuilder officeComputerBuilder = new OfficeComputerBuilder();
+        ComputerDirector officeComputerD = new ComputerDirector(officeComputerBuilder);
+        officeComputerD.makeOfficeComputer();
+        Computer officeComputer = officeComputerBuilder.getResult();
+        System.out.println("Office Computer components:");
+        for (Component component : officeComputer.getComponents()) {
+            System.out.println(component.getName());
+        }
+
 
 
     }
